@@ -18,8 +18,10 @@ public class playerMovement : MonoBehaviour {
     public GameObject bullet;
     public float bulletForce;
 
-	// Use this for initialization
-	void Start () {
+    public float forcedeath;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -35,6 +37,9 @@ public class playerMovement : MonoBehaviour {
             newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bulletForce);
             Destroy(newBullet, 3.5f);
         }
+        //rotate ship
+        transform.Rotate(Vector3.forward * turnInput * Time.deltaTime * -turnThrust);
+
 
         // wraping
         Vector2 newPos = transform.position;
@@ -62,7 +67,13 @@ public class playerMovement : MonoBehaviour {
     {
         
         rb.AddRelativeForce(Vector2.up * thrustInput);
-        rb.AddTorque(-turnInput);
+        //rb.AddTorque(-turnInput);
 
     }
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (col.relativeVelocity.magnitude > forcedeath) {
+
+        }
+    }
+
 }
