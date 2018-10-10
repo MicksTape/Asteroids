@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58582376253076058}
   - component: {fileID: 114096632430203212}
   m_Layer: 0
-  m_Name: Asteroid1
+  m_Name: AsteroidBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100506808603042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.02, y: -0.29, z: -0.059879}
-  m_LocalScale: {x: 0.18533334, y: 0.18533337, z: 0.18533337}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.24694303, y: 0.24694306, z: 0.24694306}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -89,13 +89,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c114647835449264a8cec6347d126e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxThrust: 100
-  maxTorque: 50
+  maxThrust: 150
+  maxTorque: 80
   rb: {fileID: 50130121273176746}
   screenTop: 5.7
   screenBottom: -5.7
   screenLeft: -7.35
   screenRight: 7.35
+  asteroidSize: 3
+  mediumAsteroid: {fileID: 1100506808603042, guid: fe5ae056d5499e344b1157f19d9efd57,
+    type: 2}
+  smallAsteroid: {fileID: 1100506808603042, guid: ef57e7a529b6d114799ad146cf64ee16,
+    type: 2}
 --- !u!212 &212640220844330556
 SpriteRenderer:
   m_ObjectHideFlags: 1

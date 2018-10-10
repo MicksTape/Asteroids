@@ -17,8 +17,9 @@ public class playerMovement : MonoBehaviour {
 
     public GameObject bullet;
     public float bulletForce;
-
     public float forcedeath;
+    public ParticleSystem Fire;
+    public ParticleSystem Fire2;
 
     // Use this for initialization
     void Start () {
@@ -31,12 +32,18 @@ public class playerMovement : MonoBehaviour {
         thrustInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
 
+        if (Input.GetButtonDown("Vertical")) {
+            Fire.Play();
+            Fire2.Play();
+        }
+
         //input firew bullet
         if (Input.GetButtonDown("Fire1")){
             GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
             newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bulletForce);
             Destroy(newBullet, 3.5f);
         }
+
         //rotate ship
         transform.Rotate(Vector3.forward * turnInput * Time.deltaTime * -turnThrust);
 

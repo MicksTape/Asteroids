@@ -12,6 +12,9 @@ public class asteroid : MonoBehaviour {
     public float screenBottom;
     public float screenLeft;
     public float screenRight;
+    public int asteroidSize; // 1 to 3 sizes 3 max!
+    public GameObject mediumAsteroid;
+    public GameObject smallAsteroid;
 
     // Use this for initialization
     void Start () {
@@ -51,7 +54,28 @@ public class asteroid : MonoBehaviour {
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        Destroy(other.gameObject);
+    void OnTriggerEnter2D(Collider2D other) {
+
+        //checks tag Bullet 
+        if (other.CompareTag("Bullet")) {
+            Destroy(other.gameObject);
+
+            // checks different sizes of the asteroids
+            if (asteroidSize == 3) {
+                Instantiate(mediumAsteroid, transform.position.normalized, transform.rotation);
+                Instantiate(mediumAsteroid, transform.position.normalized, transform.rotation);
+                
+            }
+            else if (asteroidSize == 2) {
+                Instantiate(smallAsteroid, transform.position.normalized, transform.rotation);
+                Instantiate(smallAsteroid, transform.position.normalized, transform.rotation);
+
+            }
+            else if (asteroidSize == 1) {
+
+            }
+            //remove asteroid
+            Destroy(gameObject);
+        }
     }
 }
