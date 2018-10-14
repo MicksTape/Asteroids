@@ -101,6 +101,8 @@ MonoBehaviour:
     type: 2}
   smallAsteroid: {fileID: 1100506808603042, guid: ef57e7a529b6d114799ad146cf64ee16,
     type: 2}
+  points: 10
+  player: {fileID: 0}
 --- !u!212 &212640220844330556
 SpriteRenderer:
   m_ObjectHideFlags: 1

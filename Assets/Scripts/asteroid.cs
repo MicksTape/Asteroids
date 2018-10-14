@@ -16,6 +16,9 @@ public class asteroid : MonoBehaviour {
     public GameObject mediumAsteroid;
     public GameObject smallAsteroid;
 
+    public int points;
+    public GameObject player;
+
     // Use this for initialization
     void Start () {
 
@@ -25,6 +28,9 @@ public class asteroid : MonoBehaviour {
 
         rb.AddForce(thrust);
         rb.AddTorque(torque);
+
+        //find player
+        player = GameObject.FindWithTag("Player");
 	}
 
 
@@ -74,6 +80,11 @@ public class asteroid : MonoBehaviour {
             else if (asteroidSize == 1) {
 
             }
+            //Score points
+            player.SendMessage("ScorePoints",points);
+
+
+
             //remove asteroid
             Destroy(gameObject);
         }
