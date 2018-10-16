@@ -7,7 +7,6 @@ public class asteroid : MonoBehaviour {
     public float maxThrust;
     public float maxTorque;
     public Rigidbody2D rb;
-
     public float screenTop;
     public float screenBottom;
     public float screenLeft;
@@ -15,9 +14,9 @@ public class asteroid : MonoBehaviour {
     public int asteroidSize; // 1 to 3 sizes 3 max!
     public GameObject mediumAsteroid;
     public GameObject smallAsteroid;
-
     public int points;
     public GameObject player;
+
 
     // Use this for initialization
     void Start () {
@@ -80,9 +79,11 @@ public class asteroid : MonoBehaviour {
             else if (asteroidSize == 1) {
 
             }
+
             //Score points
             player.SendMessage("ScorePoints",points);
 
+            
 
 
             //remove asteroid

@@ -332,18 +332,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114096632430203212, guid: 0a043649cb713654681075c1fe968aa5,
-        type: 2}
-      propertyPath: mediumAsteroid
-      value: 
-      objectReference: {fileID: 1100506808603042, guid: fe5ae056d5499e344b1157f19d9efd57,
-        type: 2}
-    - target: {fileID: 114096632430203212, guid: 0a043649cb713654681075c1fe968aa5,
-        type: 2}
-      propertyPath: smallAsteroid
-      value: 
-      objectReference: {fileID: 1100506808603042, guid: ef57e7a529b6d114799ad146cf64ee16,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a043649cb713654681075c1fe968aa5, type: 2}
   m_IsPrefabParent: 0
@@ -4126,6 +4114,91 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 980684397}
+--- !u!1 &1205762865 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1127861235160894, guid: 4066fbf0097f1ef4e9bd57555aaf7db6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1224532504}
+--- !u!82 &1205762870
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205762865}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5bba48163aed3c947bec55b5c3076e21, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &1224532504
 Prefab:
   m_ObjectHideFlags: 0
@@ -4190,6 +4263,32 @@ Prefab:
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 17486602}
+    - target: {fileID: 114365061687768216, guid: 4066fbf0097f1ef4e9bd57555aaf7db6,
+        type: 2}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1205762870}
+    - target: {fileID: 114365061687768216, guid: 4066fbf0097f1ef4e9bd57555aaf7db6,
+        type: 2}
+      propertyPath: immortalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114365061687768216, guid: 4066fbf0097f1ef4e9bd57555aaf7db6,
+        type: 2}
+      propertyPath: immortalColor.g
+      value: 0.51724136
+      objectReference: {fileID: 0}
+    - target: {fileID: 114365061687768216, guid: 4066fbf0097f1ef4e9bd57555aaf7db6,
+        type: 2}
+      propertyPath: immortalColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114365061687768216, guid: 4066fbf0097f1ef4e9bd57555aaf7db6,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1804206099813350, guid: c89192fb66a70ed48b7e6c89a96f31f0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4066fbf0097f1ef4e9bd57555aaf7db6, type: 2}
   m_IsPrefabParent: 0

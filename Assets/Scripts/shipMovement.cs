@@ -25,9 +25,10 @@ public class shipMovement : MonoBehaviour {
     public Text scoreText;
     public Text livesText;
     public GameObject gameOverScreen;
-
     public Color immortalColor;
     public Color normalColor;
+    public AudioSource audio;
+    public GameObject explosion;
 
     // Use this for initialization
     void Start () {
@@ -108,6 +109,12 @@ public class shipMovement : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.relativeVelocity.magnitude > forcedeath) {
             lives--;
+            // explosion particles ship
+            GameObject newEplosion = Instantiate(explosion, transform.position, transform.rotation);
+            Destroy (newEplosion, 3f);
+            //play explosion sound
+            audio.Play();
+
             livesText.text = "Live " + lives;
             //Respawn
             GetComponent<SpriteRenderer>().enabled = false;
