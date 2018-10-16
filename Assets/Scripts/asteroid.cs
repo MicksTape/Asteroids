@@ -16,6 +16,7 @@ public class asteroid : MonoBehaviour {
     public GameObject smallAsteroid;
     public int points;
     public GameObject player;
+    public gameManager gm;
 
 
     // Use this for initialization
@@ -30,6 +31,8 @@ public class asteroid : MonoBehaviour {
 
         //find player
         player = GameObject.FindWithTag("Player");
+        //find game manager
+        gm = GameObject.FindObjectOfType<gameManager>();
 	}
 
 
@@ -69,15 +72,18 @@ public class asteroid : MonoBehaviour {
             if (asteroidSize == 3) {
                 Instantiate(mediumAsteroid, transform.position.normalized, transform.rotation);
                 Instantiate(mediumAsteroid, transform.position.normalized, transform.rotation);
-                
+
+                gm.UpdateAmountAsteroids (1);
             }
             else if (asteroidSize == 2) {
                 Instantiate(smallAsteroid, transform.position.normalized, transform.rotation);
                 Instantiate(smallAsteroid, transform.position.normalized, transform.rotation);
 
+                gm.UpdateAmountAsteroids(1);
             }
             else if (asteroidSize == 1) {
 
+                gm.UpdateAmountAsteroids(-1);
             }
 
             //Score points

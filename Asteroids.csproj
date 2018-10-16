@@ -279,7 +279,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\asteroid.cs" />
     <Compile Include="Assets\Scripts\fireOnMovement.cs" />
+    <Compile Include="Assets\Scripts\gameManager.cs" />
     <Compile Include="Assets\Scripts\shipMovement.cs" />
+    <Compile Include="Assets\Scripts\ufo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
