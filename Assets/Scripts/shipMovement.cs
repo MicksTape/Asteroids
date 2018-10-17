@@ -16,10 +16,10 @@ public class ShipMovement : MonoBehaviour {
 
     public float screenTop, screenBottom, screenLeft, screenRight;
 
-
     public GameObject bullet;
     public float bulletForce;
     public float forcedeath;
+    public Ufo ufo;
 
     private int lives= 3;
     private int score;
@@ -31,6 +31,7 @@ public class ShipMovement : MonoBehaviour {
     public Color normalColor;
     public AudioSource audio;
     public GameObject explosion;
+
 
     // Use this for initialization
     void Start () {
@@ -118,25 +119,36 @@ public class ShipMovement : MonoBehaviour {
         GetComponent<SpriteRenderer>().color = normalColor;
     }
 
+    void LoseLife() {
+        lives--;
+        // explosion particles ship
+        GameObject newEplosion = Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(newEplosion, 3f);
+        //play explosion sound
+        audio.Play();
+
+        livesText.text = "Live " + lives;
+        //Respawn
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        Invoke("Respawn", 3f);
+
+        if (lives <= 0) {
+            //death
+            GameOver();
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.relativeVelocity.magnitude > forcedeath) {
-            lives--;
-            // explosion particles ship
-            GameObject newEplosion = Instantiate(explosion, transform.position, transform.rotation);
-            Destroy (newEplosion, 3f);
-            //play explosion sound
-            audio.Play();
+            LoseLife();
+        }
+    }
 
-            livesText.text = "Live " + lives;
-            //Respawn
-            GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<Collider2D>().enabled = false;
-            Invoke("Respawn", 3f);
-
-            if (lives <= 0) {
-                //death
-                GameOver();
-            }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Laser")) {
+            LoseLife();
+            ufo.Disable();
         }
     }
 

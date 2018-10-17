@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     public int amountAsteroids; //current amount of asteroids in scene
     public int levelNumber = 1;
     public GameObject asteroid;
+    public Ufo ufo;
 
 
     public void UpdateAmountAsteroids(int change) {
@@ -28,6 +29,9 @@ public class GameManager : MonoBehaviour {
             Instantiate(asteroid,spawnPosition,Quaternion.identity);
             amountAsteroids++;
         }
+
+        //setup ufo
+        ufo.NewLevel();
         
     }
 
