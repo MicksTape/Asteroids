@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ufo : MonoBehaviour {
+public class Ufo : MonoBehaviour {
 
     public Rigidbody2D rb;
     public Vector2 direction;
     public float speed;
     public Transform player;
+
 
 	// Use this for initialization
 	void Start () {

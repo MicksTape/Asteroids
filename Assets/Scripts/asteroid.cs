@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class asteroid : MonoBehaviour {
+public class Asteroid : MonoBehaviour {
 
     public float maxThrust;
     public float maxTorque;
@@ -16,7 +16,7 @@ public class asteroid : MonoBehaviour {
     public GameObject smallAsteroid;
     public int points;
     public GameObject player;
-    public gameManager gm;
+    public GameManager gm;
 
 
     // Use this for initialization
@@ -32,7 +32,7 @@ public class asteroid : MonoBehaviour {
         //find player
         player = GameObject.FindWithTag("Player");
         //find game manager
-        gm = GameObject.FindObjectOfType<gameManager>();
+        gm = GameObject.FindObjectOfType<GameManager>();
 	}
 
 

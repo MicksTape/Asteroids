@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class shipMovement : MonoBehaviour {
+public class ShipMovement : MonoBehaviour {
 
     public Rigidbody2D rb;
     public float thrust;
     public float turnThrust;
     private float thrustInput;
     private float turnInput;
-    public float screenTop;
-    public float screenBottom;
-    public float screenLeft;
-    public float screenRight;
+    public float boost;
+    public float boostBack;
+
+    public float screenTop, screenBottom, screenLeft, screenRight;
+
+
     public GameObject bullet;
     public float bulletForce;
     public float forcedeath;
@@ -50,6 +52,16 @@ public class shipMovement : MonoBehaviour {
             GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
             newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bulletForce);
             Destroy(newBullet, 3.5f);
+        }
+
+        //Boost forward activate
+        if (Input.GetButtonDown("Boost")) {
+            rb.AddRelativeForce(Vector2.up * boost);
+        }
+
+        //Boost activate
+        if (Input.GetButtonDown("BoostBack")) {
+            rb.AddRelativeForce(Vector2.down * boostBack);
         }
 
         //rotate ship

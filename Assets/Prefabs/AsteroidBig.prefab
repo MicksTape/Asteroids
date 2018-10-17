@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212640220844330556}
   - component: {fileID: 50130121273176746}
   - component: {fileID: 58582376253076058}
+  - component: {fileID: 114563860955017332}
   - component: {fileID: 114096632430203212}
   m_Layer: 0
   m_Name: AsteroidBig
@@ -104,6 +105,18 @@ MonoBehaviour:
   points: 10
   player: {fileID: 0}
   gm: {fileID: 0}
+--- !u!114 &114563860955017332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100506808603042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904a5d015d6606a4382fbb079a882ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 50130121273176746}
 --- !u!212 &212640220844330556
 SpriteRenderer:
   m_ObjectHideFlags: 1

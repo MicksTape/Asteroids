@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4058637086034390}
   - component: {fileID: 212640220844330556}
   - component: {fileID: 50130121273176746}
+  - component: {fileID: 114009713320703454}
   - component: {fileID: 58582376253076058}
   - component: {fileID: 114096632430203212}
   m_Layer: 0
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100506808603042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3262792, y: 0.9816891, z: 0}
+  m_LocalPosition: {x: -3.8405132, y: -1.3286029, z: 0}
   m_LocalScale: {x: 0.10704367, y: 0.10704368, z: 0.10704368}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,6 +79,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3.79
+--- !u!114 &114009713320703454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100506808603042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904a5d015d6606a4382fbb079a882ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 50130121273176746}
 --- !u!114 &114096632430203212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,6 +115,7 @@ MonoBehaviour:
   smallAsteroid: {fileID: 1100506808603042}
   points: 2
   player: {fileID: 0}
+  gm: {fileID: 0}
 --- !u!212 &212640220844330556
 SpriteRenderer:
   m_ObjectHideFlags: 1

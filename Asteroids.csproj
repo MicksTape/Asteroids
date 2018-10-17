@@ -277,11 +277,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\asteroid.cs" />
-    <Compile Include="Assets\Scripts\fireOnMovement.cs" />
-    <Compile Include="Assets\Scripts\gameManager.cs" />
-    <Compile Include="Assets\Scripts\shipMovement.cs" />
-    <Compile Include="Assets\Scripts\ufo.cs" />
+    <Compile Include="Assets\Scripts\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\AttractForce.cs" />
+    <Compile Include="Assets\Scripts\FireOnMovement.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\ShipMovement.cs" />
+    <Compile Include="Assets\Scripts\Ufo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

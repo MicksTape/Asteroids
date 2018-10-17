@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
     public int amountAsteroids; //current amount of asteroids in scene
     public int levelNumber = 1;
