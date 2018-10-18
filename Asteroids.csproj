@@ -281,6 +281,7 @@
     <Compile Include="Assets\Scripts\AttractForce.cs" />
     <Compile Include="Assets\Scripts\FireOnMovement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\ShipMovement.cs" />
     <Compile Include="Assets\Scripts\Ufo.cs" />
   </ItemGroup>

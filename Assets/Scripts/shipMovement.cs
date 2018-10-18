@@ -24,6 +24,7 @@ public class ShipMovement : MonoBehaviour {
     private int lives= 3;
     private int score;
 
+    public Text scoreMenuText;
     public Text scoreText;
     public Text livesText;
     public GameObject gameOverScreen;
@@ -38,9 +39,11 @@ public class ShipMovement : MonoBehaviour {
         score = 0;
 
         scoreText.text = "Score " + score;
+        scoreMenuText.text = "Score " + score;
         livesText.text = "Lives " + lives;
-		
-	}
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -102,6 +105,7 @@ public class ShipMovement : MonoBehaviour {
     void ScorePoints(int addPoints) {
         score += addPoints;
         scoreText.text = "Score " + score;
+        scoreMenuText.text = "Score " + score;
     }
 
     void Respawn() {
@@ -159,6 +163,10 @@ public class ShipMovement : MonoBehaviour {
 
     public void TryAgain() {
         SceneManager.LoadScene("Main");
+    }
+
+    public void GoToMenu() {
+        SceneManager.LoadScene("Menu");
     }
 
 }
