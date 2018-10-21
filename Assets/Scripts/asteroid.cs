@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour {
 
-    public float maxThrust;
-    public float maxTorque;
-    public Rigidbody2D rb;
-    public float screenTop;
-    public float screenBottom;
-    public float screenLeft;
-    public float screenRight;
-    public int asteroidSize; // 1 to 3 sizes 3 max!
-    public GameObject mediumAsteroid;
-    public GameObject smallAsteroid;
     public int points;
     public GameObject player;
     public GameManager gm;
+
+    [SerializeField]
+    private float maxThrust;
+    [SerializeField]
+    private float maxTorque;
+    [SerializeField]
+    private Rigidbody2D rb;
+    [SerializeField]
+    private float screenTop;
+    [SerializeField]
+    private float screenBottom;
+    [SerializeField]
+    private float screenLeft;
+    [SerializeField]
+    private float screenRight;
+    [SerializeField]
+    private int asteroidSize; // 1 to 3 sizes 3 max!
+    [SerializeField]
+    private GameObject mediumAsteroid;
+    [SerializeField]
+    private GameObject smallAsteroid;
 
 
     // Use this for initialization

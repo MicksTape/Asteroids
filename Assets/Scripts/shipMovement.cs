@@ -6,27 +6,40 @@ using UnityEngine.SceneManagement;
 
 public class ShipMovement : MonoBehaviour {
 
-    public Rigidbody2D rb;
-    public float thrust;
-    public float turnThrust;
-    private float thrustInput;
-    private float turnInput;
-    public float boost;
-    public float boostBack;
-    public float screenTop, screenBottom, screenLeft, screenRight; // dient voor de grensen van het scherm
-    public GameObject bullet;
-    public float bulletForce;
-    public float forcedeath;
     public Ufo ufo;
     public Text scoreMenuText;
     public Text scoreText;
     public Text livesText;
     public GameObject gameOverScreen;
-    public Color immortalColor;
-    public Color normalColor;
-    public AudioSource audio;
-    public GameObject explosion;
 
+    [SerializeField]
+    private Rigidbody2D rb;
+    [SerializeField]
+    private float thrust;
+    [SerializeField]
+    private float turnThrust;
+    private float thrustInput;
+    private float turnInput;
+    [SerializeField]
+    private float boost;
+    [SerializeField]
+    private float boostBack;
+    [SerializeField]
+    private float screenTop, screenBottom, screenLeft, screenRight; // dient voor de grensen van het scherm
+    [SerializeField]
+    private GameObject bullet;
+    [SerializeField]
+    private float bulletForce;
+    [SerializeField]
+    private float forcedeath;
+    [SerializeField]
+    private Color immortalColor;
+    [SerializeField]
+    private Color normalColor;
+    [SerializeField]
+    private AudioSource audio;
+    [SerializeField]
+    private GameObject explosion;
     private int lives = 3;
     private int score;
 

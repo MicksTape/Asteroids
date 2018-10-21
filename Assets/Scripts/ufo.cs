@@ -4,21 +4,33 @@ using UnityEngine;
 
 public class Ufo : MonoBehaviour {
 
-    public Rigidbody2D rb;
-    public Vector2 direction;
-    public float speed;
-    public Transform player;
-    public GameObject laser;
-    public float laserSpeed;
-    public float shootingDelay; // time between shots in seconds
-    public float lastTimeShot = 0;
-    public GameObject explosion;
-    public SpriteRenderer SR;
-    public Collider2D col;
     public bool disabled; //true when currently disable
     public int points;
-    public float timeBeforeRespawn;
-    public Transform startPosition;
+
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private Rigidbody2D rb;
+    [SerializeField]
+    private Vector2 direction;
+    [SerializeField]
+    private SpriteRenderer SR;
+    [SerializeField]
+    private Collider2D col;
+    [SerializeField]
+    private GameObject laser;
+    [SerializeField]
+    private float laserSpeed;
+    [SerializeField]
+    private float shootingDelay; // time between shots in seconds
+    [SerializeField]
+    private float lastTimeShot = 0;
+    [SerializeField]
+    private Transform player;
+    [SerializeField]
+    private float timeBeforeRespawn;
+    [SerializeField]
+    private Transform startPosition;
 
 
     // Use this for initialization
@@ -45,7 +57,7 @@ public class Ufo : MonoBehaviour {
             //Make laser bullet
             GameObject newLaser = Instantiate(laser, transform.position, q);
 
-            newLaser.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, laserSpeed));
+            newLaser.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2 (0f, laserSpeed));
             lastTimeShot = Time.time;
 
             Destroy(newLaser, 3.5f);

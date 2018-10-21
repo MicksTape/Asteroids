@@ -4490,6 +4490,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b67f6df43797f8478fb9dec377c24f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ufo: {fileID: 1997300587}
+  scoreMenuText: {fileID: 1607939825}
+  scoreText: {fileID: 801773152}
+  livesText: {fileID: 980684399}
+  gameOverScreen: {fileID: 17486602}
   rb: {fileID: 1205762866}
   thrust: 0.8
   turnThrust: 120
@@ -4502,11 +4507,6 @@ MonoBehaviour:
   bullet: {fileID: 1411463804132948, guid: e18fb3f6f09be514dab63cff63656e8b, type: 2}
   bulletForce: 200
   forcedeath: 3
-  ufo: {fileID: 1997300587}
-  scoreMenuText: {fileID: 1607939825}
-  scoreText: {fileID: 801773152}
-  livesText: {fileID: 980684399}
-  gameOverScreen: {fileID: 17486602}
   immortalColor: {r: 1, g: 0.51724136, b: 0, a: 0.43137255}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   audio: {fileID: 1205762870}
@@ -5069,14 +5069,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114555877206337128, guid: 7184ef3564114e641a629586c74e9a21,
         type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1205762871}
+    - target: {fileID: 114555877206337128, guid: 7184ef3564114e641a629586c74e9a21,
+        type: 2}
       propertyPath: startPosition
       value: 
       objectReference: {fileID: 260529492}
-    - target: {fileID: 58657029717335282, guid: 7184ef3564114e641a629586c74e9a21,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7184ef3564114e641a629586c74e9a21, type: 2}
   m_IsPrefabParent: 0

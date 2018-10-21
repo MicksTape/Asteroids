@@ -8,7 +8,8 @@ public class AttractForce : MonoBehaviour {
 
     const float G = 1.6674f;
 
-    public Rigidbody2D rb;
+    [SerializeField]
+    private Rigidbody2D rb;
 
 
     //Searches for attractors in list
