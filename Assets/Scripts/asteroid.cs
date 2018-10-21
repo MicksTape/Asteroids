@@ -40,7 +40,7 @@ public class Asteroid : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        // wraping
+        // wraping, chanes the position of the astroid when it leaves the screen
         Vector2 newPos = transform.position;
         if (transform.position.y > screenTop) {
             newPos.y = screenBottom;

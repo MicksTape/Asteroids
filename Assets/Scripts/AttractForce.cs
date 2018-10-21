@@ -10,6 +10,7 @@ public class AttractForce : MonoBehaviour {
 
     public Rigidbody2D rb;
 
+    //Searches for attractors in list
     private void FixedUpdate() {
         AttractForce[] attractors = FindObjectsOfType<AttractForce>();
         foreach (AttractForce attractor in attractors) {
@@ -26,7 +27,7 @@ public class AttractForce : MonoBehaviour {
 
         if (distance == 0f)
             return;
-
+        //Newtons law of gravity
         float forceMagnitude = G * (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 2);
         Vector2 force = direction.normalized * forceMagnitude;
 

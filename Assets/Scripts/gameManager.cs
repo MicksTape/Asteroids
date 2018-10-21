@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    UfoManager ufoManager;
+
     public int amountAsteroids; //current amount of asteroids in scene
     public int levelNumber = 1;
     public GameObject asteroid;
-    public Ufo ufo;
 
+    private void Start() {
+        ufoManager = UfoManager.instance;
+    }
 
     public void UpdateAmountAsteroids(int change) {
         amountAsteroids += change;
@@ -23,6 +27,7 @@ public class GameManager : MonoBehaviour {
     void NextLevel() {
         levelNumber++;
 
+
         //spawn more asteroids in the next level
         for (int i = 0; i < levelNumber*2; i++) {
             Vector2 spawnPosition = new Vector2(Random.Range(-7.35f, 7.35f), 5.7f);
@@ -31,7 +36,8 @@ public class GameManager : MonoBehaviour {
         }
 
         //setup ufo
-        ufo.NewLevel();
+        ufoManager.ufo.NewLevel();
+
         
     }
 

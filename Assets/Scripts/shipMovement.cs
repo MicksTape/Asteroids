@@ -51,7 +51,7 @@ public class ShipMovement : MonoBehaviour {
         thrustInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
 
-        //input firew bullet
+        //input fires bullet
         if (Input.GetButtonDown("Fire1")){
             GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
             newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bulletForce);
@@ -72,7 +72,7 @@ public class ShipMovement : MonoBehaviour {
         transform.Rotate(Vector3.forward * turnInput * Time.deltaTime * -turnThrust);
 
 
-        // wraping
+        // wraping, changes the position of the ship when it leaves the screen
         Vector2 newPos = transform.position;
         if (transform.position.y > screenTop){
             newPos.y = screenBottom;
@@ -108,6 +108,7 @@ public class ShipMovement : MonoBehaviour {
         scoreMenuText.text = "Score " + score;
     }
 
+    // If player dies it will be immortal for 3 seconds when it respawns
     void Respawn() {
         rb.velocity = Vector2.zero;
         transform.position = Vector2.zero;
@@ -143,12 +144,14 @@ public class ShipMovement : MonoBehaviour {
         }
     }
 
+    //Lose life
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.relativeVelocity.magnitude > forcedeath) {
             LoseLife();
         }
     }
 
+    //Lose life when shot by laser
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Laser")) {
             LoseLife();
@@ -156,6 +159,7 @@ public class ShipMovement : MonoBehaviour {
         }
     }
 
+    // Shows game over screen
     void GameOver() {
         CancelInvoke();
         gameOverScreen.SetActive(true);
