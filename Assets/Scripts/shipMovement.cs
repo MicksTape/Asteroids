@@ -13,17 +13,11 @@ public class ShipMovement : MonoBehaviour {
     private float turnInput;
     public float boost;
     public float boostBack;
-
-    public float screenTop, screenBottom, screenLeft, screenRight;
-
+    public float screenTop, screenBottom, screenLeft, screenRight; // dient voor de grensen van het scherm
     public GameObject bullet;
     public float bulletForce;
     public float forcedeath;
     public Ufo ufo;
-
-    private int lives= 3;
-    private int score;
-
     public Text scoreMenuText;
     public Text scoreText;
     public Text livesText;
@@ -32,6 +26,9 @@ public class ShipMovement : MonoBehaviour {
     public Color normalColor;
     public AudioSource audio;
     public GameObject explosion;
+
+    private int lives = 3;
+    private int score;
 
 
     // Use this for initialization
@@ -42,9 +39,9 @@ public class ShipMovement : MonoBehaviour {
         scoreMenuText.text = "Score " + score;
         livesText.text = "Lives " + lives;
 
-
     }
 	
+
 	// Update is called once per frame
 	void Update () {
         // inut van keyboard
@@ -94,6 +91,7 @@ public class ShipMovement : MonoBehaviour {
 
     }
 
+
     void FixedUpdate()
     {
         
@@ -102,11 +100,13 @@ public class ShipMovement : MonoBehaviour {
 
     }
 
+
     void ScorePoints(int addPoints) {
         score += addPoints;
         scoreText.text = "Score " + score;
         scoreMenuText.text = "Score " + score;
     }
+
 
     // If player dies it will be immortal for 3 seconds when it respawns
     void Respawn() {
@@ -119,10 +119,12 @@ public class ShipMovement : MonoBehaviour {
         Invoke ("Immortal", 3f);
     }
 
+
     void Immortal() {
         GetComponent<Collider2D>().enabled = true;
         GetComponent<SpriteRenderer>().color = normalColor;
     }
+
 
     void LoseLife() {
         lives--;
@@ -144,12 +146,14 @@ public class ShipMovement : MonoBehaviour {
         }
     }
 
+
     //Lose life
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.relativeVelocity.magnitude > forcedeath) {
             LoseLife();
         }
     }
+
 
     //Lose life when shot by laser
     private void OnTriggerEnter2D(Collider2D other) {
@@ -159,15 +163,18 @@ public class ShipMovement : MonoBehaviour {
         }
     }
 
+
     // Shows game over screen
     void GameOver() {
         CancelInvoke();
         gameOverScreen.SetActive(true);
     }
 
+
     public void TryAgain() {
         SceneManager.LoadScene("Main");
     }
+
 
     public void GoToMenu() {
         SceneManager.LoadScene("Menu");

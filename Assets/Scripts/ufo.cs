@@ -28,6 +28,7 @@ public class Ufo : MonoBehaviour {
         NewLevel();
     }
 	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -51,6 +52,7 @@ public class Ufo : MonoBehaviour {
         }
 	}
 
+
     void FixedUpdate() {
 
         if (disabled) {
@@ -61,12 +63,14 @@ public class Ufo : MonoBehaviour {
         rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
     }
 
+
     public void NewLevel() {
 
         Disable();
         timeBeforeRespawn = Random.Range(4f, 14f);
         Invoke("Enable", timeBeforeRespawn);
     }
+
 
     void Enable() {
         // Move to start psoition
@@ -77,6 +81,7 @@ public class Ufo : MonoBehaviour {
         disabled = false;
     }
 
+
     public void Disable() {
         //turn off collider and sprite
         col.enabled = false;
@@ -84,6 +89,7 @@ public class Ufo : MonoBehaviour {
         disabled = true;
 
     }
+
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Bullet")) {
@@ -94,6 +100,7 @@ public class Ufo : MonoBehaviour {
             Disable();
         }
     }
+
 
     void OnCollisionEnter2D(Collision2D col) {
         

@@ -35,7 +35,6 @@ public class Asteroid : MonoBehaviour {
         gm = GameObject.FindObjectOfType<GameManager>();
 	}
 
-
 	
 	// Update is called once per frame
 	void Update () {
@@ -61,6 +60,7 @@ public class Asteroid : MonoBehaviour {
         transform.position = newPos;
 
     }
+
 
     void OnTriggerEnter2D(Collider2D other) {
 
@@ -88,9 +88,6 @@ public class Asteroid : MonoBehaviour {
 
             //Score points
             player.SendMessage("ScorePoints",points);
-
-            
-
 
             //remove asteroid
             Destroy(gameObject);

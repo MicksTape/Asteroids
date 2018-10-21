@@ -10,6 +10,7 @@ public class AttractForce : MonoBehaviour {
 
     public Rigidbody2D rb;
 
+
     //Searches for attractors in list
     private void FixedUpdate() {
         AttractForce[] attractors = FindObjectsOfType<AttractForce>();
@@ -18,6 +19,7 @@ public class AttractForce : MonoBehaviour {
                 Atrract(attractor);
         }
     }
+
 
     void Atrract(AttractForce objToAttract) {
         Rigidbody2D rbToAttract = objToAttract.rb;

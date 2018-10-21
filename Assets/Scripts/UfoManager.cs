@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class UfoManager : MonoBehaviour {
 
+
     public Ufo ufo;
+
 
     #region Singleton
     public static UfoManager instance;
+
 
     private void Awake() {
         if (instance != null) {
@@ -15,6 +18,7 @@ public class UfoManager : MonoBehaviour {
         }
 
         instance = this;
+
     }
     #endregion
 }

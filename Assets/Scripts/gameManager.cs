@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour {
     public int levelNumber = 1;
     public GameObject asteroid;
 
+
     private void Start() {
         ufoManager = UfoManager.instance;
     }
+
 
     public void UpdateAmountAsteroids(int change) {
         amountAsteroids += change;
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour {
             Invoke("NextLevel", 3f);
         }
     }
+
 
     void NextLevel() {
         levelNumber++;
